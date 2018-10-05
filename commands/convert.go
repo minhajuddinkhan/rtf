@@ -15,7 +15,7 @@ var (
 
 
 func Convert(path string) *cli.Command{
-	format := "Rich Text Document"
+	format := ""
 	return &cli.Command{
 		Name: "convert",
 		Aliases: []string{"convert path/input.html path/output.html type"},
