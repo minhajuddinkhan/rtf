@@ -19,7 +19,7 @@ func Convert(path string) *cli.Command{
 	fileType := "rtf"
 	return &cli.Command{
 		Name: "convert",
-		Aliases: []string{"convert -i inputtest.html -o outputetst.rtf -f Rich Text Format"},
+		Aliases: []string{"convert"},
 		Usage: "does file conversion",
 		Action: func(c *cli.Context) error {
 			
