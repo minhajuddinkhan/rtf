@@ -30,5 +30,29 @@ $ go get github.com/docsbox/go-libreofficekit
 ``` go get github.com/minhajuddinkhan/rtf/cmd/libreconv ```
 
 ##### 5. Convert via CLI
+      
+``` libreconv convert [PathToInputFile] [PathToOutputFile] [FileType]```
 
-``` libreconv convert pathtoyourinputfile.html pathtoyouroutputfile.rtf```
+Example
+
+``` libreconv convert yolo.html yolo.rtf rtf```
+
+
+```
+NAME:
+   Libre Office converter - Converts to your desired data format through LibreOffice 5.2 - A new cli application
+
+USAGE:
+   main [global options] command [command options] [arguments...]
+
+VERSION:
+   0.0.0
+
+COMMANDS:
+     convert, convert path/input.html path/output.html type  does file conversion
+     help, h                                                 Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --help, -h     show help
+   --version, -v  print the version
+   ```
