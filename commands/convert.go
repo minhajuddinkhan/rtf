@@ -16,10 +16,9 @@ var (
 
 func Convert(path string) *cli.Command{
 	format := "Rich Text Document"
-	fileType := "rtf"
 	return &cli.Command{
 		Name: "convert",
-		Aliases: []string{"convert path/input.html path/output.html"},
+		Aliases: []string{"convert path/input.html path/output.html type"},
 		Usage: "does file conversion",
 		Action: func(c *cli.Context) error {
 			
@@ -27,11 +26,16 @@ func Convert(path string) *cli.Command{
 			args := c.Args()
 			pathToInput := args.Get(0)
 			pathToOutput := args.Get(1)
+			fileType := args.Get(2)
 			if len(pathToInput) == 0 {
 				return errors.New("Invalid Args [Input missing] ")
 			} 
 			if len(pathToOutput) == 0 {
 				return errors.New("Invalid Args [Output missing] ")
+			}
+
+			if len(fileType) == 0 {
+				return errors.New("Invalid Args [FileType missing] ")
 			}
 
 			office, err := libreofficekit.NewOffice(path)			
